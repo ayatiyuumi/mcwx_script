@@ -1,0 +1,43 @@
+{
+  "module": "metadata_integrity_check",
+  "source_file": "38523.pdf",
+  "timestamp": null,
+  "risk_assessment": {
+    "total_score": 7,
+    "risk_level": "MEDIUM_RISK",
+    "red_count": 0,
+    "orange_count": 1,
+    "yellow_count": 1
+  },
+  "flags": [
+    {
+      "detector": "AuthorConsistencyDetector",
+      "risk_type": "orcid_missing",
+      "severity": "yellow",
+      "evidence": "未发现 ORCID 标识",
+      "location": "author_metadata",
+      "review_required": true,
+      "suggested_action": "请作者提供 ORCID",
+      "metadata": {}
+    },
+    {
+      "detector": "AffiliationCheckDetector",
+      "risk_type": "commercial_entity_in_affiliations",
+      "severity": "orange",
+      "evidence": "发现商业机构: 11 Institute of Plant Breeding and Biotechnology, MNS University of Agriculture Multan, Multan, Pakistan,; 12 Institute of Crop Science, College of Agriculture and Biotechnology, Zhejiang University, Hangzhou, P. R.; 10 Department of Molecular Biology and Biotechnology, University of Sheffield, Sheffield, United Kingdom,",
+      "location": "affiliations",
+      "review_required": true,
+      "suggested_action": "请核实商业机构参与情况，并检查利益冲突声明",
+      "metadata": {
+        "commercial_entities": [
+          "11 Institute of Plant Breeding and Biotechnology, MNS University of Agriculture Multan, Multan, Pakistan,",
+          "12 Institute of Crop Science, College of Agriculture and Biotechnology, Zhejiang University, Hangzhou, P. R.",
+          "10 Department of Molecular Biology and Biotechnology, University of Sheffield, Sheffield, United Kingdom,"
+        ]
+      }
+    }
+  ],
+  "summary": {
+    "total_flags": 2
+  }
+}

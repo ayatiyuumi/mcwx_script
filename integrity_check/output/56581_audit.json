@@ -1,0 +1,53 @@
+{
+  "module": "metadata_integrity_check",
+  "source_file": "56581.pdf",
+  "timestamp": null,
+  "risk_assessment": {
+    "total_score": 6,
+    "risk_level": "MEDIUM_RISK",
+    "red_count": 0,
+    "orange_count": 0,
+    "yellow_count": 3
+  },
+  "flags": [
+    {
+      "detector": "AuthorConsistencyDetector",
+      "risk_type": "free_email_mismatch",
+      "severity": "yellow",
+      "evidence": "免费邮箱域名 'hotmail.com' 与机构域名不匹配",
+      "location": "author_metadata",
+      "review_required": true,
+      "suggested_action": "请核实作者身份是否与声称机构一致",
+      "metadata": {
+        "email": "us.minhas@hotmail.com",
+        "domain": "hotmail.com"
+      }
+    },
+    {
+      "detector": "AuthorConsistencyDetector",
+      "risk_type": "free_email_mismatch",
+      "severity": "yellow",
+      "evidence": "免费邮箱域名 'yahoo.com' 与机构域名不匹配",
+      "location": "author_metadata",
+      "review_required": true,
+      "suggested_action": "请核实作者身份是否与声称机构一致",
+      "metadata": {
+        "email": "kifayat.rph@yahoo.com",
+        "domain": "yahoo.com"
+      }
+    },
+    {
+      "detector": "AuthorConsistencyDetector",
+      "risk_type": "orcid_missing",
+      "severity": "yellow",
+      "evidence": "未发现 ORCID 标识",
+      "location": "author_metadata",
+      "review_required": true,
+      "suggested_action": "请作者提供 ORCID",
+      "metadata": {}
+    }
+  ],
+  "summary": {
+    "total_flags": 3
+  }
+}

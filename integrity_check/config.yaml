@@ -1,0 +1,89 @@
+detector_params:
+  statcheck:
+    recompute_test_types: ["t", "F", "chi2"]
+    one_tailed_default: false
+  grim:
+    integer_scale_keywords:
+      - "Likert"
+      - "score"
+      - "rating"
+      - "number of"
+      - "count"
+      - "item"
+      - "questionnaire"
+  grimmer:
+    require_grim_pass: true
+  sprite:
+    max_iterations: 100000
+    random_seed: 42
+    require_grimmer_pass: true
+  carlisle:
+    p_lower_bound: 0.005
+    p_upper_bound: 0.995
+    min_baseline_vars: 5
+  benford:
+    mad_threshold: 2.0
+    min_observations: 50
+  terminal_digit:
+    chi2_alpha: 0.05
+    min_observations: 30
+  tiva:
+    min_studies: 3
+  figure_consistency:
+    relative_tolerance: 0.05
+  impossible_values:
+    value_ranges:
+      age: [0, 120]
+      height_cm: [30, 250]
+      weight_kg: [0.5, 500]
+      bmi: [10, 80]
+      p_value: [0.0, 1.0]
+      percentage: [0.0, 100.0]
+      sd_nonnegative: true
+      n_nonnegative: true
+  sd_repetition:
+    min_groups: 3
+    relative_tolerance: 0.001
+  digit_preference:
+    target_digits: [0, 5]
+    chi2_alpha: 0.01
+    min_observations: 20
+  duplicate_records:
+    hash_columns: ["age", "height", "weight", "mean", "sd", "n"]
+    cross_table_check: true
+
+  AuthorConsistencyDetector:
+    free_email_domains:
+      - gmail.com
+      - yahoo.com
+      - outlook.com
+      - hotmail.com
+      - 163.com
+      - qq.com
+      - 126.com
+      - sina.com
+
+  AffiliationCheckDetector:
+    corp_keywords:
+      - Corp
+      - Inc
+      - Ltd
+      - LLC
+      - Company
+      - Co.,
+      - Technologies
+      - Pharmaceutical
+      - Biotech
+      - Biosciences
+      - Research Corporation
+
+  DeclarationCheckDetector:
+    weak_coi_phrases:
+      - no conflict
+      - no competing
+      - none declared
+      - declare no
+
+  SpecialIssueCheckDetector:
+    min_keyword_overlap: 2
+    review_period_warning_days: 30

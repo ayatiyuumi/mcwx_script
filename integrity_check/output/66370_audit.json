@@ -1,0 +1,64 @@
+{
+  "module": "metadata_integrity_check",
+  "source_file": "66370.pdf",
+  "timestamp": null,
+  "risk_assessment": {
+    "total_score": 11,
+    "risk_level": "MEDIUM_RISK",
+    "red_count": 0,
+    "orange_count": 1,
+    "yellow_count": 3
+  },
+  "flags": [
+    {
+      "detector": "AuthorConsistencyDetector",
+      "risk_type": "free_email_mismatch",
+      "severity": "yellow",
+      "evidence": "免费邮箱域名 'yahoo.com' 与机构域名不匹配",
+      "location": "author_metadata",
+      "review_required": true,
+      "suggested_action": "请核实作者身份是否与声称机构一致",
+      "metadata": {
+        "email": "ahrar1122@yahoo.com",
+        "domain": "yahoo.com"
+      }
+    },
+    {
+      "detector": "AuthorConsistencyDetector",
+      "risk_type": "orcid_missing",
+      "severity": "yellow",
+      "evidence": "未发现 ORCID 标识",
+      "location": "author_metadata",
+      "review_required": true,
+      "suggested_action": "请作者提供 ORCID",
+      "metadata": {}
+    },
+    {
+      "detector": "AffiliationCheckDetector",
+      "risk_type": "commercial_entity_in_affiliations",
+      "severity": "orange",
+      "evidence": "发现商业机构: 4Institute of Biochemistry and Biotechnology, University of Veterinary and Animal Sciences, Lahore, Pakistan",
+      "location": "affiliations",
+      "review_required": true,
+      "suggested_action": "请核实商业机构参与情况，并检查利益冲突声明",
+      "metadata": {
+        "commercial_entities": [
+          "4Institute of Biochemistry and Biotechnology, University of Veterinary and Animal Sciences, Lahore, Pakistan"
+        ]
+      }
+    },
+    {
+      "detector": "DeclarationCheckDetector",
+      "risk_type": "funding_missing",
+      "severity": "yellow",
+      "evidence": "未发现基金资助声明",
+      "location": "declarations",
+      "review_required": true,
+      "suggested_action": "请作者补充基金信息",
+      "metadata": {}
+    }
+  ],
+  "summary": {
+    "total_flags": 4
+  }
+}

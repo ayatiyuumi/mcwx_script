@@ -1,0 +1,47 @@
+{
+  "module": "metadata_integrity_check",
+  "source_file": "66885.pdf",
+  "timestamp": null,
+  "risk_assessment": {
+    "total_score": 9,
+    "risk_level": "MEDIUM_RISK",
+    "red_count": 0,
+    "orange_count": 1,
+    "yellow_count": 2
+  },
+  "flags": [
+    {
+      "detector": "AuthorConsistencyDetector",
+      "risk_type": "orcid_missing",
+      "severity": "yellow",
+      "evidence": "未发现 ORCID 标识",
+      "location": "author_metadata",
+      "review_required": true,
+      "suggested_action": "请作者提供 ORCID",
+      "metadata": {}
+    },
+    {
+      "detector": "DeclarationCheckDetector",
+      "risk_type": "coi_missing",
+      "severity": "orange",
+      "evidence": "未发现利益冲突声明",
+      "location": "declarations",
+      "review_required": true,
+      "suggested_action": "请作者补充利益冲突声明",
+      "metadata": {}
+    },
+    {
+      "detector": "DeclarationCheckDetector",
+      "risk_type": "funding_missing",
+      "severity": "yellow",
+      "evidence": "未发现基金资助声明",
+      "location": "declarations",
+      "review_required": true,
+      "suggested_action": "请作者补充基金信息",
+      "metadata": {}
+    }
+  ],
+  "summary": {
+    "total_flags": 3
+  }
+}
